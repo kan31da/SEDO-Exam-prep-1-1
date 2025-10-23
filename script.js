@@ -12,8 +12,7 @@ document.getElementById('btn-add').addEventListener('click', () => {
   document.getElementById('result').textContent = add(a, b);
 });
 
-document.getElementById('btn-subtract').addEventListener('click', () => {
-  const a = Number(document.getElementById('a').value);
-  const b = Number(document.getElementById('b').value);
-  document.getElementById('result').textContent = subtract(a, b);
+['add', 'subtract', 'multiply'].forEach(op => {
+  document.getElementById(`btn-${op}`)
+    .addEventListener('click', () => calculateAndDisplay(window[op]));
 });
